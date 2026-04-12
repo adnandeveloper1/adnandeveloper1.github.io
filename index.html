@@ -3,69 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Adnan | Android Developer Portfolio</title>
+    <title>Muhammad Adnan | Android Developer</title>
     <style>
+        /* CSS Variables for Theme */
         :root {
-            --bg-dark: #0f0f0f;
-            --nav-green: #2e7d32; /* Primary Green */
-            --card-green: #1b5e20; /* Card Green */
-            --accent-light-green: #81c784;
-            --text-white: #ffffff;
-            --text-gray: #b0b0b0;
+            --bg-dark: #0f172a; /* Professional Dark Slate Background */
+            --nav-green: #14532d; /* Deep Green for Navigation */
+            --card-green: #166534; /* Green for Cards */
+            --accent-green: #4ade80; /* Bright Green for Accents & Links */
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
+            --border-color: #334155;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: var(--bg-dark);
-            color: var(--text-white);
+            color: var(--text-main);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+        /* Navigation Menu */
         nav {
             background-color: var(--nav-green);
-            padding: 15px 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
 
         nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
             letter-spacing: 1px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
+            gap: 2rem;
         }
 
-        nav ul li {
-            margin-left: 25px;
-        }
-
-        nav ul li a {
-            color: white;
+        nav a {
+            color: var(--text-main);
             text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: 0.3s;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: var(--accent-light-green);
+        nav a:hover {
+            color: var(--accent-green);
         }
 
         /* Hero Section */
@@ -74,145 +75,228 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070') center/cover;
+            align-items: flex-start;
+            padding: 0 10%;
+            background: linear-gradient(135deg, rgba(15,23,42,1) 0%, rgba(20,83,45,0.2) 100%);
+        }
+
+        .hero h3 {
+            color: var(--accent-green);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            color: var(--accent-light-green);
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            max-width: 700px;
-        }
-
-        .cta-buttons {
-            margin-top: 30px;
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
         }
 
         .btn {
-            padding: 12px 30px;
-            border-radius: 5px;
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            transition: 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-green);
         }
 
         .btn-primary {
-            background-color: var(--nav-green);
-            color: white;
+            background-color: transparent;
+            color: var(--accent-green);
         }
 
         .btn-primary:hover {
-            background-color: var(--card-green);
+            background-color: rgba(74, 222, 128, 0.1);
         }
 
-        /* Sections */
+        /* Common Section Styles */
         section {
-            padding: 100px 10%;
+            padding: 6rem 10%;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
         }
 
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--nav-green);
-            display: inline-block;
-            border-bottom: 3px solid var(--nav-green);
-            padding-bottom: 10px;
-        }
-
-        /* Experience Cards */
-        .experience-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: #1a1a1a;
-            border-left: 5px solid var(--nav-green);
-            padding: 30px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            background-color: #222;
-        }
-
-        .card h3 {
-            color: var(--accent-light-green);
-            margin-bottom: 10px;
-        }
-
-        .card .date {
-            font-size: 0.85rem;
-            color: var(--nav-green);
-            margin-bottom: 15px;
+        .section-title::after {
+            content: "";
             display: block;
+            height: 1px;
+            width: 300px;
+            background-color: var(--border-color);
+            margin-left: 20px;
         }
 
-        /* Projects */
+        /* Experience Section */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            background-color: var(--card-green);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .timeline-company {
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .timeline-content ul {
+            list-style-position: inside;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
             background-color: var(--card-green);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            padding: 2rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
         }
 
-        .project-card h4 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .tech-tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.1);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            margin-right: 5px;
-            margin-top: 10px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            background-color: rgba(74, 222, 128, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
         }
 
-        /* Footer */
+        /* Footer / Contact Section */
         footer {
-            background-color: #050505;
-            padding: 50px 10%;
+            padding: 4rem 10%;
             text-align: center;
+            background-color: var(--nav-green);
         }
 
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: 0.3s;
+        .contact-info {
+            margin-bottom: 2rem;
         }
 
-        .social-icons a:hover {
-            color: var(--accent-light-green);
+        .contact-info a {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 3rem; }
+            .hero h2 { font-size: 1.8rem; }
             nav ul { display: none; }
         }
     </style>
@@ -220,7 +304,7 @@
 <body>
 
     <nav>
-        <div class="logo">ADNAN.DEV</div>
+        <div class="logo">Adnan Shaheen</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -230,87 +314,149 @@
     </nav>
 
     <section class="hero">
-        <h1>Muhammad Adnan</h1>
-        <p>Software Engineering Student | Android Developer Specializing in Kotlin & Jetpack Compose</p>
-        <div class="cta-buttons">
-            <a href="mailto:adnanshaheen.se@gmail.com" class="btn btn-primary">Hire Me</a>
-            <a href="https://github.com/adnandeveloper1" target="_blank" class="btn" style="border: 1px solid white; color: white;">View GitHub</a>
-        </div>
+        <h3>Hi, my name is</h3>
+        <h1>Muhammad Adnan.</h1>
+        <h2>I build scalable Android applications.</h2>
+        <p>
+            I am a Software Engineering student and an Android Developer specializing in Kotlin, Jetpack Compose, and Clean Architecture. I am passionate about developing robust, offline-first mobile solutions and driving community-focused digital initiatives.
+        </p>
+        <a href="#projects" class="btn btn-primary">Check out my work</a>
     </section>
 
     <section id="about">
-        <div class="section-header">
-            <h2>About Me</h2>
+        <h2 class="section-title">About Me</h2>
+        <div style="color: var(--text-muted); max-width: 800px;">
+            <p style="margin-bottom: 1rem;">
+                I am currently in my final year of Software Engineering at the University of Mianwali. My technical expertise centers around modern Android development frameworks, specifically building intuitive UI/UX with Jetpack Compose and implementing efficient data management utilizing Room Database and Firebase.
+            </p>
+            <p>
+                Beyond technical development, I am deeply committed to community service and leadership. As the President of the Blood Donation Society at my university, I have led teams to organize critical health awareness drives and digitized vital medical community records.
+            </p>
         </div>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-gray);">
-            Final-year Software Engineering student at the University of Mianwali. Main Android development mein "Offline-First" design aur Clean Architecture (MVVM, Room DB) par focus karta hoon. Meri passion high-quality mobile solutions create karna aur community services mein contribute karna hai.
-        </p>
     </section>
 
-    <section id="experience" style="background-color: #121212;">
-        <div class="section-header">
-            <h2>Work Experience</h2>
-        </div>
-        <div class="experience-container">
-            <div class="card">
-                <h3>Android Developer Intern</h3>
-                <span class="date">Jun 2025 - Oct 2025 | Okra Software House</span>
-                <p>Modern Jetpack Compose UI par kaam kiya, legacy layouts ko migrate kiya aur declarative programming ke zariye clean code likha.</p>
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Android Developer Intern</div>
+                        <div class="timeline-company">Okra Software House</div>
+                    </div>
+                    <div class="timeline-date">Jun 2025 — Oct 2025</div>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Engineered hybrid screens leveraging Interoperability APIs to seamlessly integrate Compose within legacy XML views.</li>
+                        <li>Contributed to the migration of legacy codebases to modern Jetpack Compose architectures, significantly improving rendering performance.</li>
+                        <li>Wrote clean, scalable Kotlin code utilizing declarative programming paradigms.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
-                <h3>Software Engineer</h3>
-                <span class="date">Feb 2025 - Apr 2025 | DC Office, Mianwali</span>
-                <p>Monitoring Software Portal design kiya jo real-time data collection aur analytical reports generate karta tha.</p>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Software Engineer</div>
+                        <div class="timeline-company">Deputy Commissioner Office, Mianwali</div>
+                    </div>
+                    <div class="timeline-date">Feb 2025 — Apr 2025</div>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Designed and developed a centralized Monitoring Software Portal utilized by multiple municipal departments.</li>
+                        <li>Implemented features for real-time data aggregation to support high-level decision-making and performance tracking.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
-                <h3>President (BDS)</h3>
-                <span class="date">2022 - Present | UMW</span>
-                <p>Blood Donation Society ko lead kiya aur manual records ko digitalize karne ke liye "Blood Donation App" develop ki.</p>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">President</div>
+                        <div class="timeline-company">Blood Donation Society, UMW</div>
+                    </div>
+                    <div class="timeline-date">Oct 2022 — Present</div>
+                </div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Lead and manage a dedicated team of student volunteers, orchestrating large-scale health awareness drives and emergency response networks.</li>
+                        <li>Conceptualized and initiated the development of a digital platform to streamline donor searches and eliminate manual record-keeping bottlenecks.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <div class="section-header">
-            <h2>Featured Projects</h2>
-        </div>
+        <h2 class="section-title">Technical Projects</h2>
         <div class="project-grid">
             <div class="project-card">
-                <h4>StitchCraft Tailor</h4>
-                <p>Ek offline-first application jo tailor businesses ke manual record-keeping ko khatam karti hai.</p>
-                <div class="tech-tag">Kotlin</div><div class="tech-tag">Room DB</div><div class="tech-tag">Compose</div>
+                <div>
+                    <h3 class="project-title">StitchCraft Tailor</h3>
+                    <p class="project-desc">An offline-first Android application architected to replace traditional, paper-based management systems for local tailoring businesses. Engineered for high performance in low-connectivity environments.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Kotlin</span>
+                    <span class="tech-tag">Room Database</span>
+                    <span class="tech-tag">Jetpack Compose</span>
+                </div>
             </div>
+
             <div class="project-card">
-                <h4>Hunnarmand</h4>
-                <p>Local skilled workers (electricians, plumbers) ko dhoondne ke liye ek service-based platform.</p>
-                <div class="tech-tag">Firebase</div><div class="tech-tag">Google Maps API</div><div class="tech-tag">REST API</div>
+                <div>
+                    <h3 class="project-title">Hunnarmand</h3>
+                    <p class="project-desc">A comprehensive service-based platform connecting users with local skilled professionals (electricians, mechanics, etc.). Features include real-time geo-location search, user profiling, and integrated communication.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Kotlin</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Google Maps API</span>
+                </div>
             </div>
+
             <div class="project-card">
-                <h4>The Student Desk UMW</h4>
-                <p>Ek digital community platform jo students ko scholarships aur academic resources provide karta hai.</p>
-                <div class="tech-tag">Community Platform</div><div class="tech-tag">Digital Service</div>
+                <div>
+                    <h3 class="project-title">The Student Desk UMW</h3>
+                    <p class="project-desc">A digital community platform established to support university students by aggregating academic resources, scholarship information, and facilitating peer-to-peer assistance.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Community Management</span>
+                    <span class="tech-tag">Digital Platform</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div>
+                    <h3 class="project-title">Hostel Manager Utility</h3>
+                    <p class="project-desc">A dedicated utility app digitizing residential records, implementing automated modules for room allocation, student attendance, mess management, and complaint registration.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">MVVM Architecture</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">Material Design</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="section-header">
-            <h2>Contact Me</h2>
+    <footer id="contact">
+        <div class="contact-info">
+            <h2 style="color: var(--text-main); margin-bottom: 1rem;">Get In Touch</h2>
+            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Currently open for new opportunities and collaborations.</p>
+            <a href="mailto:adnanshaheen.se@gmail.com">adnanshaheen.se@gmail.com</a>
         </div>
-        <div style="text-align: center;">
-            <p>Mianwali, Pakistan</p>
-            <p>Email: adnanshaheen.se@gmail.com</p>
-            <p>Phone: +92 306 90500528</p>
+        
+        <div class="social-links">
+            <a href="https://github.com/adnandeveloper1" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/muhammad-adnan-6b416a250/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.youtube.com/@adnanshaheen1" target="_blank" rel="noopener noreferrer">YouTube</a>
         </div>
-    </section>
-
-    <footer>
-        <div class="social-icons">
-            <a href="https://github.com/adnandeveloper1">GitHub</a>
-            <a href="https://www.linkedin.com/in/muhammad-adnan-6b416a250/">LinkedIn</a>
-            <a href="https://www.youtube.com/@adnanshaheen1">YouTube</a>
+        
+        <div class="copyright">
+            <p>Designed & Built by Muhammad Adnan &copy; 2026</p>
         </div>
-        <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-gray);">&copy; 2026 Muhammad Adnan. All rights reserved.</p>
     </footer>
 
 </body>
