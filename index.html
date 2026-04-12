@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Adnan | Android Developer Portfolio</title>
+    <style>
+        :root {
+            --bg-dark: #0f0f0f;
+            --nav-green: #2e7d32; /* Primary Green */
+            --card-green: #1b5e20; /* Card Green */
+            --accent-light-green: #81c784;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--nav-green);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-light-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070') center/cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-light-green);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+        }
+
+        .cta-buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--nav-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--card-green);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--nav-green);
+            display: inline-block;
+            border-bottom: 3px solid var(--nav-green);
+            padding-bottom: 10px;
+        }
+
+        /* Experience Cards */
+        .experience-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border-left: 5px solid var(--nav-green);
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: #222;
+        }
+
+        .card h3 {
+            color: var(--accent-light-green);
+            margin-bottom: 10px;
+        }
+
+        .card .date {
+            font-size: 0.85rem;
+            color: var(--nav-green);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-green);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .project-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-light-green);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ADNAN.DEV</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Muhammad Adnan</h1>
+        <p>Software Engineering Student | Android Developer Specializing in Kotlin & Jetpack Compose</p>
+        <div class="cta-buttons">
+            <a href="mailto:adnanshaheen.se@gmail.com" class="btn btn-primary">Hire Me</a>
+            <a href="https://github.com/adnandeveloper1" target="_blank" class="btn" style="border: 1px solid white; color: white;">View GitHub</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+        </div>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-gray);">
+            Final-year Software Engineering student at the University of Mianwali. Main Android development mein "Offline-First" design aur Clean Architecture (MVVM, Room DB) par focus karta hoon. Meri passion high-quality mobile solutions create karna aur community services mein contribute karna hai.
+        </p>
+    </section>
+
+    <section id="experience" style="background-color: #121212;">
+        <div class="section-header">
+            <h2>Work Experience</h2>
+        </div>
+        <div class="experience-container">
+            <div class="card">
+                <h3>Android Developer Intern</h3>
+                <span class="date">Jun 2025 - Oct 2025 | Okra Software House</span>
+                <p>Modern Jetpack Compose UI par kaam kiya, legacy layouts ko migrate kiya aur declarative programming ke zariye clean code likha.</p>
+            </div>
+            <div class="card">
+                <h3>Software Engineer</h3>
+                <span class="date">Feb 2025 - Apr 2025 | DC Office, Mianwali</span>
+                <p>Monitoring Software Portal design kiya jo real-time data collection aur analytical reports generate karta tha.</p>
+            </div>
+            <div class="card">
+                <h3>President (BDS)</h3>
+                <span class="date">2022 - Present | UMW</span>
+                <p>Blood Donation Society ko lead kiya aur manual records ko digitalize karne ke liye "Blood Donation App" develop ki.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+        </div>
+        <div class="project-grid">
+            <div class="project-card">
+                <h4>StitchCraft Tailor</h4>
+                <p>Ek offline-first application jo tailor businesses ke manual record-keeping ko khatam karti hai.</p>
+                <div class="tech-tag">Kotlin</div><div class="tech-tag">Room DB</div><div class="tech-tag">Compose</div>
+            </div>
+            <div class="project-card">
+                <h4>Hunnarmand</h4>
+                <p>Local skilled workers (electricians, plumbers) ko dhoondne ke liye ek service-based platform.</p>
+                <div class="tech-tag">Firebase</div><div class="tech-tag">Google Maps API</div><div class="tech-tag">REST API</div>
+            </div>
+            <div class="project-card">
+                <h4>The Student Desk UMW</h4>
+                <p>Ek digital community platform jo students ko scholarships aur academic resources provide karta hai.</p>
+                <div class="tech-tag">Community Platform</div><div class="tech-tag">Digital Service</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <h2>Contact Me</h2>
+        </div>
+        <div style="text-align: center;">
+            <p>Mianwali, Pakistan</p>
+            <p>Email: adnanshaheen.se@gmail.com</p>
+            <p>Phone: +92 306 90500528</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/adnandeveloper1">GitHub</a>
+            <a href="https://www.linkedin.com/in/muhammad-adnan-6b416a250/">LinkedIn</a>
+            <a href="https://www.youtube.com/@adnanshaheen1">YouTube</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-gray);">&copy; 2026 Muhammad Adnan. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
