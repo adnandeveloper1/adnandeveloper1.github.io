@@ -119,6 +119,12 @@
             margin-bottom: 2.5rem;
         }
 
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -130,12 +136,24 @@
         }
 
         .btn-primary {
-            background-color: transparent;
-            color: var(--accent-green);
+            background-color: var(--nav-green);
+            color: white;
+            border-color: var(--nav-green);
         }
 
         .btn-primary:hover {
-            background-color: rgba(74, 222, 128, 0.1);
+            background-color: var(--card-green);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
         }
 
         /* Common Section Styles */
@@ -160,7 +178,7 @@
             margin-left: 20px;
         }
 
-        /* Experience Section */
+        /* Experience & Education Section */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -338,6 +356,8 @@
             .hero h1 { font-size: 3rem; }
             .hero h2 { font-size: 1.8rem; }
             nav ul { display: none; }
+            .timeline-header { flex-direction: column; align-items: flex-start; }
+            .timeline-date { margin-top: 0.5rem; }
         }
     </style>
 </head>
@@ -347,6 +367,7 @@
         <div class="logo">Adnan Shaheen</div>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -358,22 +379,43 @@
         
         <h3>Hi, my name is</h3>
         <h1>Muhammad Adnan.</h1>
-        <h2>I build scalable Android applications.</h2>
+        <h2>Software Engineer & Native Android Developer</h2>
         <p>
-            I am a Software Engineering student and an Android Developer specializing in Kotlin, Jetpack Compose, and Clean Architecture. I am passionate about developing robust, offline-first mobile solutions and driving community-focused digital initiatives.
+            I build intelligent, scalable, and offline-first mobile experiences using Kotlin, Jetpack Compose, and Clean Architecture.
         </p>
-        <a href="#projects" class="btn btn-primary">Check out my work</a>
+        <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">Explore Work</a>
+            <a href="M_Adnan_CV.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
+        </div>
     </section>
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div style="color: var(--text-muted); max-width: 800px;">
             <p style="margin-bottom: 1rem;">
-                I am currently in my final year of Software Engineering at the University of Mianwali. My technical expertise centers around modern Android development frameworks, specifically building intuitive UI/UX with Jetpack Compose and implementing efficient data management utilizing Room Database and Firebase.
+                I am a Final-year Software Engineering student specializing in native Android development. I am passionate about Quality Engineering, focusing on building predictable, crash-free applications with robust local data persistence and seamless offline capabilities.
             </p>
             <p>
-                Beyond technical development, I am deeply committed to community service and leadership. As the President of the Blood Donation Society at my university, I have led teams to organize critical health awareness drives and digitized vital medical community records.
+                Beyond code, I am deeply committed to community service and leadership. As the President of the Blood Donation Society at my university, I have led teams to organize critical health awareness drives and digitized vital medical community records.
             </p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Bachelors of Software Engineering</div>
+                        <div class="timeline-company">University of Mianwali</div>
+                    </div>
+                    <div class="timeline-date">Graduating May 2026</div>
+                </div>
+                <div class="timeline-content">
+                    <p style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">CGPA: 3.13 / 4.0</p>
+                </div>
+            </div>
         </div>
     </section>
 
