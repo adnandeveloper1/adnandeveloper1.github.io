@@ -7,10 +7,10 @@
     <style>
         /* CSS Variables for Theme */
         :root {
-            --bg-dark: #0f172a; /* Professional Dark Slate Background */
-            --nav-green: #14532d; /* Deep Green for Navigation */
-            --card-green: #166534; /* Green for Cards */
-            --accent-green: #4ade80; /* Bright Green for Accents & Links */
+            --bg-dark: #0f172a; 
+            --nav-green: #14532d; 
+            --card-green: #166534; 
+            --accent-green: #4ade80; 
             --text-main: #f8fafc;
             --text-muted: #cbd5e1;
             --border-color: #334155;
@@ -71,19 +71,29 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            padding: 0 10%;
+            padding: 100px 10% 0;
             background: linear-gradient(135deg, rgba(15,23,42,1) 0%, rgba(20,83,45,0.2) 100%);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-green);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
         .hero h3 {
             color: var(--accent-green);
             font-weight: 400;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
 
@@ -96,7 +106,7 @@
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 600;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
@@ -207,22 +217,36 @@
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .project-card {
             background-color: var(--card-green);
-            padding: 2rem;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            overflow: hidden; 
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-green);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
         .project-title {
@@ -243,6 +267,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .tech-tag {
@@ -252,6 +277,20 @@
             background-color: rgba(74, 222, 128, 0.1);
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            margin-top: auto;
+        }
+
+        .project-link:hover {
+            color: var(--text-main);
         }
 
         /* Footer / Contact Section */
@@ -295,6 +334,7 @@
         }
 
         @media (max-width: 768px) {
+            .hero { padding-top: 120px; }
             .hero h1 { font-size: 3rem; }
             .hero h2 { font-size: 1.8rem; }
             nav ul { display: none; }
@@ -314,6 +354,8 @@
     </nav>
 
     <section class="hero">
+        <img src="images/profile.jpg" alt="Muhammad Adnan" class="profile-img">
+        
         <h3>Hi, my name is</h3>
         <h1>Muhammad Adnan.</h1>
         <h2>I build scalable Android applications.</h2>
@@ -392,52 +434,75 @@
     <section id="projects">
         <h2 class="section-title">Technical Projects</h2>
         <div class="project-grid">
+            
             <div class="project-card">
-                <div>
-                    <h3 class="project-title">StitchCraft Tailor</h3>
-                    <p class="project-desc">An offline-first Android application architected to replace traditional, paper-based management systems for local tailoring businesses. Engineered for high performance in low-connectivity environments.</p>
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-tag">Kotlin</span>
-                    <span class="tech-tag">Room Database</span>
-                    <span class="tech-tag">Jetpack Compose</span>
+                <img src="images/stitchcraft.jpg" alt="StitchCraft Tailor App" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3 class="project-title">StitchCraft Tailor</h3>
+                        <p class="project-desc">An offline-first Android application architected to replace traditional, paper-based management systems for local tailoring businesses. Engineered for high performance in low-connectivity environments.</p>
+                    </div>
+                    <div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Room DB</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <div>
-                    <h3 class="project-title">Hunnarmand</h3>
-                    <p class="project-desc">A comprehensive service-based platform connecting users with local skilled professionals (electricians, mechanics, etc.). Features include real-time geo-location search, user profiling, and integrated communication.</p>
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-tag">Kotlin</span>
-                    <span class="tech-tag">Firebase</span>
-                    <span class="tech-tag">Google Maps API</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <h3 class="project-title">The Student Desk UMW</h3>
-                    <p class="project-desc">A digital community platform established to support university students by aggregating academic resources, scholarship information, and facilitating peer-to-peer assistance.</p>
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-tag">Community Management</span>
-                    <span class="tech-tag">Digital Platform</span>
+                <img src="images/hunnarmand.jpg" alt="Hunnarmand App" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3 class="project-title">Hunnarmand</h3>
+                        <p class="project-desc">A comprehensive service-based platform connecting users with local skilled professionals. Features include real-time geo-location search, user profiling, and integrated communication.</p>
+                    </div>
+                    <div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Google Maps API</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="project-card">
-                <div>
-                    <h3 class="project-title">Hostel Manager Utility</h3>
-                    <p class="project-desc">A dedicated utility app digitizing residential records, implementing automated modules for room allocation, student attendance, mess management, and complaint registration.</p>
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-tag">MVVM Architecture</span>
-                    <span class="tech-tag">SQLite</span>
-                    <span class="tech-tag">Material Design</span>
+                <img src="images/hostel.jpg" alt="Advanced Hostel Management App" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3 class="project-title">Advanced Hostel Management App</h3>
+                        <p class="project-desc">A dedicated utility app digitizing residential records, implementing automated modules for room allocation, student attendance, mess management, and complaint registration.</p>
+                    </div>
+                    <div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">MVVM Architecture</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Material Design</span>
+                        </div>
+                        <a href="https://github.com/adnandeveloper1/Advanced_Hostel_Management_App" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a>
+                    </div>
                 </div>
             </div>
+
+            <div class="project-card">
+                <img src="images/studentdesk.jpg" alt="The Student Desk UMW" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3 class="project-title">The Student Desk UMW</h3>
+                        <p class="project-desc">A digital community platform established to support university students by aggregating academic resources, scholarship information, and facilitating peer-to-peer assistance.</p>
+                    </div>
+                    <div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Community Management</span>
+                            <span class="tech-tag">Digital Platform</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
