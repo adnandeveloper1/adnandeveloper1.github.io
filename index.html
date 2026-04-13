@@ -315,7 +315,7 @@
             height: 200px;
             object-fit: cover;
             border-bottom: 1px solid var(--border-color);
-            background-color: var(--nav-bg);
+            background-color: var(--nav-bg); 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -327,6 +327,16 @@
             object-fit: cover;
             outline: none;
             background-color: #000;
+        }
+
+        /* Certificate specific image style */
+        .cert-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fff; 
         }
 
         /* Media Scroller for Multiple Videos */
@@ -374,6 +384,13 @@
             font-weight: 600;
             color: var(--text-main);
             margin-bottom: 0.5rem;
+        }
+
+        .project-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
         
         .scroll-hint {
@@ -491,6 +508,7 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -503,331 +521,4 @@
         <h1>I'm <span class="highlight">Muhammad Adnan</span></h1>
         <h2>Software Engineer & Native Android Developer</h2>
         <p>
-            I build intelligent, scalable, and offline-first mobile experiences using Kotlin, Jetpack Compose, and Clean Architecture.
-        </p>
-        
-        <div class="btn-group">
-            <a href="#projects" class="btn btn-primary">
-                Explore Work 
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="M Adnan CV for Android developer.pdf" class="btn btn-secondary" target="_blank">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                Download CV
-            </a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div style="color: var(--text-muted); max-width: 800px; margin: 0 auto; text-align: center;">
-            <p style="margin-bottom: 1rem;">
-                I am a Final-year Software Engineering student specializing in native Android development. I am passionate about Quality Engineering, focusing on building predictable, crash-free applications with robust local data persistence and seamless offline capabilities.
-            </p>
-            <p>
-                Beyond code, I am deeply committed to community service and leadership. As the President of the Blood Donation Society at my university, I have led teams to organize critical health awareness drives and digitized vital medical community records.
-            </p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title">Technical Arsenal</h2>
-        <div class="skills-grid">
-            
-            <div class="skill-category">
-                <h3>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                    Languages
-                </h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Kotlin</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C/C++</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                    Android & UI
-                </h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Jetpack Compose</span>
-                    <span class="skill-tag">XML</span>
-                    <span class="skill-tag">Android SDK</span>
-                    <span class="skill-tag">Kotlin Multiplatform (KMP)</span>
-                    <span class="skill-tag">Clean Architecture</span>
-                    <span class="skill-tag">MVVM/MVI</span>
-                    <span class="skill-tag">Room DB</span>
-                    <span class="skill-tag">Dependency Injection (Hilt)</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                    Tools & Systems
-                </h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Git/GitHub</span>
-                    <span class="skill-tag">Agile Methodologies</span>
-                    <span class="skill-tag">Firebase</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                    DevOps
-                </h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">CI/CD pipeline</span>
-                    <span class="skill-tag">GitHub Actions</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">Bachelors of Software Engineering</div>
-                        <div class="timeline-company">University of Mianwali</div>
-                    </div>
-                    <div class="timeline-date">Graduating May 2026</div>
-                </div>
-                <div class="timeline-content">
-                    <p style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">CGPA: 3.13 / 4.0</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">Android Developer Intern</div>
-                        <div class="timeline-company">Okra Software House</div>
-                    </div>
-                    <div class="timeline-date">Jun 2025 — Oct 2025</div>
-                </div>
-                <div class="timeline-content">
-                    <ul>
-                        <li>Engineered hybrid screens leveraging Interoperability APIs to seamlessly integrate Compose within legacy XML views.</li>
-                        <li>Contributed to the migration of legacy codebases to modern Jetpack Compose architectures, significantly improving rendering performance.</li>
-                        <li>Wrote clean, scalable Kotlin code utilizing declarative programming paradigms.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">Software Engineer</div>
-                        <div class="timeline-company">Deputy Commissioner Office, Mianwali</div>
-                    </div>
-                    <div class="timeline-date">Feb 2025 — Apr 2025</div>
-                </div>
-                <div class="timeline-content">
-                    <ul>
-                        <li>Designed and developed a centralized Monitoring Software Portal utilized by multiple municipal departments.</li>
-                        <li>Implemented features for real-time data aggregation to support high-level decision-making and performance tracking.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">President</div>
-                        <div class="timeline-company">Blood Donation Society, UMW</div>
-                    </div>
-                    <div class="timeline-date">Oct 2022 — Present</div>
-                </div>
-                <div class="timeline-content">
-                    <ul>
-                        <li>Lead and manage a dedicated team of student volunteers, orchestrating large-scale health awareness drives and emergency response networks.</li>
-                        <li>Conceptualized and initiated the development of a digital platform to streamline donor searches and eliminate manual record-keeping bottlenecks.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Technical Projects</h2>
-        <div class="project-grid">
-
-            <div class="project-card">
-                <video class="project-img" controls preload="metadata">
-                    <source src="DSMS-Sample.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="project-content">
-                    <div>
-                        <h3 class="project-title">DC Monitoring Application</h3>
-                        <p class="project-desc">A specialized monitoring website and application developed for the Deputy Commissioner of Mianwali.</p>
-                    </div>
-                    <div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Java/Kotlin</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">XML</span>
-                        </div>
-                        <div class="project-links-container">
-                            <a href="https://github.com/adnandeveloper1/District-Monitoring-System-Agriculture-Department" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                View Repository
-                            </a>
-                            <a href="DCO presented by adnan.pptx" target="_blank" rel="noopener noreferrer" class="project-link" style="color: var(--accent-green);">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                                View Slides
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <video class="project-img" controls preload="metadata">
-                    <source src="tichcraft talor.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="project-content">
-                    <div>
-                        <h3 class="project-title">StitchCraft Tailor</h3>
-                        <p class="project-desc">An offline-first Android application architected to replace traditional, paper-based management systems for local tailoring businesses. Engineered for high performance in low-connectivity environments.</p>
-                    </div>
-                    <div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Room DB</span>
-                            <span class="tech-tag">Jetpack Compose</span>
-                        </div>
-                        <div class="project-links-container">
-                            <a href="https://github.com/adnandeveloper1/Stitch-Craft-Tailor" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                View Repository
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="media-scroller">
-                    <video controls preload="metadata">
-                        <source src="Hunnarmand.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <video controls preload="metadata">
-                        <source src="Hunnarmand 1 (2).mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="project-content">
-                    <div>
-                        <h3 class="project-title">Hunnarmand</h3>
-                        <div class="scroll-hint">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                            Scroll video horizontally
-                        </div>
-                        <p class="project-desc">A comprehensive service-based platform connecting users with local skilled professionals. Features include real-time geo-location search, user profiling, and integrated communication.</p>
-                    </div>
-                    <div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Jetpack Compose</span>
-                            <span class="tech-tag">Google Maps API</span>
-                        </div>
-                        <div class="project-links-container">
-                            <a href="https://github.com/Alyasa62/Hunrmand" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                View Repository
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <video class="project-img" controls preload="metadata">
-                    <source src="Hostel management.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="project-content">
-                    <div>
-                        <h3 class="project-title">Advanced Hostel Management App</h3>
-                        <p class="project-desc">A dedicated utility app digitizing residential records, implementing automated modules for room allocation, student attendance, mess management, and complaint registration.</p>
-                    </div>
-                    <div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">MVVM Architecture</span>
-                            <span class="tech-tag">SQLite</span>
-                              <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">Jetpack Compose</span>
-                            <span class="tech-tag">Material Design</span>
-                        </div>
-                        <div class="project-links-container">
-                            <a href="https://github.com/adnandeveloper1/Advanced_Hostel_Management_App" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                View Repository
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                </div>
-                <div class="project-content">
-                    <div>
-                        <h3 class="project-title">The Student Desk UMW</h3>
-                        <p class="project-desc">A digital community platform established to support university students by aggregating academic resources, scholarship information, and facilitating peer-to-peer assistance.</p>
-                    </div>
-                    <div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Community Management</span>
-                            <span class="tech-tag">Digital Platform</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="contact-info">
-            <h2 style="color: var(--text-main); margin-bottom: 1rem;">Get In Touch</h2>
-            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Currently open for new opportunities and collaborations.</p>
-            <br>
-            <a href="mailto:adnanshaheen.se@gmail.com">adnanshaheen.se@gmail.com</a>
-        </div>
-        
-        <div class="social-links">
-            <a href="https://github.com/adnandeveloper1" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/muhammad-adnan-6b416a250/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.youtube.com/@adnanshaheen1" target="_blank" rel="noopener noreferrer">YouTube</a>
-        </div>
-        
-        <div class="copyright">
-            <p>Designed & Built by Muhammad Adnan &copy; 2026</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+            I build intelligent, scalable,
