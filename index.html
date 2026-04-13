@@ -7,13 +7,13 @@
     <style>
         /* CSS Variables for Theme */
         :root {
-            --bg-dark: #0f172a; 
-            --nav-green: #14532d; 
-            --card-green: #166534; 
-            --accent-green: #4ade80; 
-            --text-main: #f8fafc;
-            --text-muted: #cbd5e1;
-            --border-color: #334155;
+            --bg-dark: #0d1117; /* Deeper dark background */
+            --nav-bg: #010409; 
+            --card-green: #161b22; 
+            --accent-green: #39d353; /* Bright GitHub-style green */
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: #30363d;
         }
 
         * {
@@ -32,7 +32,7 @@
 
         /* Navigation Menu */
         nav {
-            background-color: var(--nav-green);
+            background-color: var(--nav-bg);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
@@ -41,7 +41,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid var(--border-color);
         }
 
         nav .logo {
@@ -69,96 +69,108 @@
             color: var(--accent-green);
         }
 
-        /* Hero Section */
+        /* Hero Section (Centered & Styled like Screenshot) */
         .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            padding: 100px 10% 0;
-            background: linear-gradient(135deg, rgba(15,23,42,1) 0%, rgba(20,83,45,0.2) 100%);
+            align-items: center; /* Centered everything */
+            text-align: center;
+            padding: 120px 10% 40px;
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--accent-green);
+            border: 3px solid var(--border-color);
             margin-bottom: 2rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        .hero h3 {
+        .welcome-badge {
+            background-color: rgba(57, 211, 83, 0.1);
             color: var(--accent-green);
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(57, 211, 83, 0.2);
         }
 
         .hero h1 {
             font-size: 4rem;
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--text-main);
         }
 
+        .hero h1 .highlight {
+            color: var(--accent-green);
+        }
+
         .hero h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
+            font-size: 2rem;
+            font-weight: 400;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
 
         .hero p {
-            max-width: 600px;
+            max-width: 650px;
             font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .btn-group {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            border: 1px solid var(--accent-green);
+            border: 1px solid transparent;
         }
 
         .btn-primary {
-            background-color: var(--nav-green);
-            color: white;
-            border-color: var(--nav-green);
+            background-color: var(--accent-green);
+            color: #000; /* Dark text on bright background */
         }
 
         .btn-primary:hover {
-            background-color: var(--card-green);
+            background-color: #2ea043;
+            transform: translateY(-2px);
         }
         
         .btn-secondary {
             background-color: transparent;
             color: var(--text-main);
-            border-color: var(--border-color);
+            border-color: var(--text-muted);
         }
 
         .btn-secondary:hover {
-            border-color: var(--accent-green);
-            color: var(--accent-green);
+            border-color: var(--text-main);
+            transform: translateY(-2px);
         }
 
         /* Common Section Styles */
         section {
             padding: 6rem 10%;
+            border-top: 1px solid var(--border-color);
         }
 
         .section-title {
@@ -167,15 +179,8 @@
             margin-bottom: 3rem;
             display: flex;
             align-items: center;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            height: 1px;
-            width: 300px;
-            background-color: var(--border-color);
-            margin-left: 20px;
+            justify-content: center; /* Centered section titles */
+            color: var(--text-main);
         }
 
         /* Experience & Education Section */
@@ -183,19 +188,21 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .timeline-item {
             background-color: var(--card-green);
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
             transition: transform 0.3s ease;
         }
 
         .timeline-item:hover {
             transform: translateY(-5px);
+            border-color: var(--accent-green);
         }
 
         .timeline-header {
@@ -212,13 +219,14 @@
         }
 
         .timeline-company {
-            color: var(--accent-green);
+            color: var(--text-muted);
             font-weight: 500;
+            margin-top: 0.2rem;
         }
 
         .timeline-date {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--accent-green);
         }
 
         .timeline-content ul {
@@ -240,23 +248,24 @@
 
         .project-card {
             background-color: var(--card-green);
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
             transition: transform 0.3s ease;
             overflow: hidden; 
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+            border-color: var(--accent-green);
         }
 
         .project-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 3px solid var(--accent-green);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .project-content {
@@ -289,17 +298,16 @@
         }
 
         .tech-tag {
-            font-family: monospace;
             font-size: 0.8rem;
             color: var(--accent-green);
-            background-color: rgba(74, 222, 128, 0.1);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            background-color: rgba(57, 211, 83, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
         }
 
         .project-link {
             display: inline-block;
-            color: var(--accent-green);
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
@@ -308,14 +316,15 @@
         }
 
         .project-link:hover {
-            color: var(--text-main);
+            color: var(--accent-green);
         }
 
         /* Footer / Contact Section */
         footer {
             padding: 4rem 10%;
             text-align: center;
-            background-color: var(--nav-green);
+            background-color: var(--nav-bg);
+            border-top: 1px solid var(--border-color);
         }
 
         .contact-info {
@@ -326,6 +335,7 @@
             color: var(--accent-green);
             text-decoration: none;
             font-weight: 500;
+            font-size: 1.2rem;
         }
 
         .social-links {
@@ -336,7 +346,7 @@
         }
 
         .social-links a {
-            color: var(--text-main);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.3s ease;
@@ -353,8 +363,8 @@
 
         @media (max-width: 768px) {
             .hero { padding-top: 120px; }
-            .hero h1 { font-size: 3rem; }
-            .hero h2 { font-size: 1.8rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.5rem; }
             nav ul { display: none; }
             .timeline-header { flex-direction: column; align-items: flex-start; }
             .timeline-date { margin-top: 0.5rem; }
@@ -377,21 +387,29 @@
     <section class="hero">
         <img src="images/profile.jpg" alt="Muhammad Adnan" class="profile-img">
         
-        <h3>Hi, my name is</h3>
-        <h1>Muhammad Adnan.</h1>
+        <div class="welcome-badge">Welcome to my portfolio</div>
+        
+        <h1>I'm <span class="highlight">Muhammad Adnan</span></h1>
         <h2>Software Engineer & Native Android Developer</h2>
         <p>
             I build intelligent, scalable, and offline-first mobile experiences using Kotlin, Jetpack Compose, and Clean Architecture.
         </p>
+        
         <div class="btn-group">
-            <a href="#projects" class="btn btn-primary">Explore Work</a>
-            <a href="M_Adnan_CV.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
+            <a href="#projects" class="btn btn-primary">
+                Explore Work 
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="M_Adnan_CV.pdf" class="btn btn-secondary" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Download CV
+            </a>
         </div>
     </section>
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <div style="color: var(--text-muted); max-width: 800px;">
+        <div style="color: var(--text-muted); max-width: 800px; margin: 0 auto; text-align: center;">
             <p style="margin-bottom: 1rem;">
                 I am a Final-year Software Engineering student specializing in native Android development. I am passionate about Quality Engineering, focusing on building predictable, crash-free applications with robust local data persistence and seamless offline capabilities.
             </p>
@@ -552,6 +570,7 @@
         <div class="contact-info">
             <h2 style="color: var(--text-main); margin-bottom: 1rem;">Get In Touch</h2>
             <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Currently open for new opportunities and collaborations.</p>
+            <br>
             <a href="mailto:adnanshaheen.se@gmail.com">adnanshaheen.se@gmail.com</a>
         </div>
         
