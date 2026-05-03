@@ -353,6 +353,15 @@
             height: 6px;
         }
         
+        .media-scroller::-webkit-scrollbar-track {
+            background: var(--nav-bg);
+        }
+        
+        .media-scroller::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 10px;
+        }
+
         .media-scroller video {
             flex: 0 0 100%;
             height: 200px;
@@ -551,28 +560,19 @@
             <div class="skill-category">
                 <h3>Languages</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Kotlin</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">Kotlin</span><span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">C/C++</span>
                 </div>
             </div>
             <div class="skill-category">
                 <h3>Android & UI</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Jetpack Compose</span>
-                    <span class="skill-tag">Clean Architecture</span>
-                    <span class="skill-tag">MVVM/MVI</span>
-                    <span class="skill-tag">Room DB</span>
-                    <span class="skill-tag">Hilt</span>
+                    <span class="skill-tag">Jetpack Compose</span><span class="skill-tag">Clean Architecture</span><span class="skill-tag">Room DB</span><span class="skill-tag">Hilt</span>
                 </div>
             </div>
             <div class="skill-category">
                 <h3>Tools & Cloud</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Git/GitHub</span>
-                    <span class="skill-tag">Firebase</span>
-                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Git/GitHub</span><span class="skill-tag">Firebase</span><span class="skill-tag">CI/CD</span>
                 </div>
             </div>
         </div>
@@ -612,7 +612,7 @@
         <h2 class="section-title">Technical Projects</h2>
         <div class="project-grid">
 
-            <!-- Featured: Expense Tracker -->
+            <!-- Expense Tracker -->
             <div class="project-card" style="border-color: var(--accent-green); box-shadow: 0 0 15px rgba(57, 211, 83, 0.1);">
                 <video class="project-img" controls preload="metadata"><source src="Expense tracker.mp4" type="video/mp4"></video>
                 <div class="project-content">
@@ -621,10 +621,7 @@
                             <h3 class="project-title">Expense Tracker Mobile App</h3>
                             <span class="skill-tag" style="font-size: 0.7rem; background: rgba(57, 211, 83, 0.2);">LIVE ON PLAY STORE</span>
                         </div>
-                        <p class="project-desc">Production-ready financial tool built with Clean Architecture. Features real-time tracking, spending analytics, and CSV/PDF export with zero hardcoded data.</p>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Jetpack Compose</span><span class="tech-tag">MVVM</span><span class="tech-tag">Room DB</span>
+                        <p class="project-desc">Production-ready financial tool built with Clean Architecture. Features interactive dashboards and CSV/PDF export with zero hardcoded data.</p>
                     </div>
                     <div class="project-links-container">
                         <a href="https://play.google.com/store/apps/details?id=com.nexappra.expensetrackerapp" target="_blank" class="project-link" style="color: var(--accent-green);">Google Play Store</a>
@@ -639,8 +636,7 @@
                     <video controls><source src="Hunnarmand 1 (2).mp4" type="video/mp4"></video>
                 </div>
                 <div class="project-content">
-                    <div><h3 class="project-title">Hunnarmand</h3><p class="project-desc">Platform connecting users with local professionnels using geo-location and Firebase.</p></div>
-                    <div class="tech-stack"><span class="tech-tag">Kotlin</span><span class="tech-tag">Google Maps API</span></div>
+                    <div><h3 class="project-title">Hunnarmand</h3><p class="project-desc">Platform connecting users with local skilled professionnels using geo-location and Firebase.</p></div>
                     <a href="https://github.com/Alyasa62/Hunrmand" target="_blank" class="project-link">View Repository</a>
                 </div>
             </div>
@@ -650,7 +646,6 @@
                 <video class="project-img" controls><source src="Hostel management.mp4" type="video/mp4"></video>
                 <div class="project-content">
                     <div><h3 class="project-title">Hostel Management App</h3><p class="project-desc">Digitizing residential records, mess management, and room allocation.</p></div>
-                    <div class="tech-stack"><span class="tech-tag">MVVM</span><span class="tech-tag">SQLite</span></div>
                     <a href="https://github.com/adnandeveloper1/Advanced_Hostel_Management_App" target="_blank" class="project-link">View Repo</a>
                 </div>
             </div>
@@ -660,7 +655,6 @@
                 <video class="project-img" controls><source src="tichcraft talor.mp4" type="video/mp4"></video>
                 <div class="project-content">
                     <div><h3 class="project-title">StitchCraft Tailor</h3><p class="project-desc">Offline-first management system for local businesses.</p></div>
-                    <div class="tech-stack"><span class="tech-tag">Kotlin</span><span class="tech-tag">Room DB</span></div>
                     <a href="https://github.com/adnandeveloper1/Stitch-Craft-Tailor" target="_blank" class="project-link">View Repo</a>
                 </div>
             </div>
@@ -700,6 +694,9 @@
                     <h3 class="project-title">Advanced Programming in Kotlin</h3>
                     <p class="project-subtitle">Coursera (Meta) | Jul 2025</p>
                     <p class="project-desc">Successfully completed advanced Kotlin concepts via Meta's professional certification.</p>
+                    <div class="project-links-container" style="margin-top: 10px;">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/PN8ISH4APKNR?redirectTo=%2Flearn%2Fadvanced-programming-in-kotlin%3Faction%3Denroll&utm_campaign=sharing_cta&utm_content=cert_image&utm_medium=certificate&utm_product=course&utm_source=link" target="_blank" class="project-link" style="color: var(--accent-green); font-size: 0.8rem;">Verify Certificate</a>
+                    </div>
                 </div>
             </div>
 
