@@ -183,7 +183,7 @@
             color: var(--text-main);
         }
 
-        /* Skills Section */
+        /* Technical Arsenal Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -232,7 +232,7 @@
             font-weight: 500;
         }
 
-        /* Timeline Section */
+        /* Experience & Education Section */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -284,7 +284,11 @@
             margin-top: 1rem;
         }
 
-        /* Project Cards */
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -311,14 +315,42 @@
             height: 200px;
             object-fit: cover;
             border-bottom: 1px solid var(--border-color);
+            background-color: var(--nav-bg); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        /* Certificate specific image style */
+        .cert-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fff; 
+        }
+
+        /* Video styling */
+        video.project-img {
+            object-fit: cover;
+            outline: none;
             background-color: #000;
         }
 
+        /* Media Scroller for Multiple Videos */
         .media-scroller {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             border-bottom: 1px solid var(--border-color);
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-color) var(--nav-bg);
+        }
+        
+        .media-scroller::-webkit-scrollbar {
+            height: 6px;
         }
         
         .media-scroller video {
@@ -326,6 +358,8 @@
             height: 200px;
             object-fit: cover;
             scroll-snap-align: start;
+            background-color: #000;
+            outline: none;
         }
 
         .project-content {
@@ -333,13 +367,59 @@
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .scroll-hint {
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 1rem 0;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            background-color: rgba(57, 211, 83, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .project-links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: auto;
         }
 
         .project-link {
@@ -350,22 +430,34 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
 
-        .project-link:hover { color: var(--accent-green); }
-
-        .cert-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background-color: #fff;
+        .project-link:hover {
+            color: var(--accent-green);
         }
 
+        /* Footer / Contact Section */
         footer {
             padding: 4rem 10%;
             text-align: center;
             background-color: var(--nav-bg);
             border-top: 1px solid var(--border-color);
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .contact-links a {
@@ -374,12 +466,47 @@
             gap: 0.7rem;
             color: var(--accent-green);
             text-decoration: none;
-            margin-bottom: 1rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--text-main);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
         @media (max-width: 768px) {
+            .hero { padding-top: 120px; }
             .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.5rem; }
             nav ul { display: none; }
+            .timeline-header { flex-direction: column; align-items: flex-start; }
+            .timeline-date { margin-top: 0.5rem; }
         }
     </style>
 </head>
@@ -413,7 +540,8 @@
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div style="color: var(--text-muted); max-width: 800px; margin: 0 auto; text-align: center;">
-            <p>I am a Final-year Software Engineering student specializing in native Android development. I serve as the <strong>President of the Blood Donation Society UMW</strong> and Technical Head at Nexgen Computing Society.</p>
+            <p style="margin-bottom: 1rem;">I am a Final-year Software Engineering student specializing in native Android development. I am passionate about Quality Engineering, focusing on building predictable, crash-free applications with robust local data persistence and seamless offline capabilities.</p>
+            <p>Beyond code, I serve as the President of the <a href="https://umw.edu.pk/blood-donation-society/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green); text-decoration: none; font-weight: 500;">Blood Donation Society at UMW</a> and Technical Head at Nexgen Computing Society (NCS).</p>
         </div>
     </section>
 
@@ -423,13 +551,28 @@
             <div class="skill-category">
                 <h3>Languages</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Kotlin</span><span class="skill-tag">Java</span><span class="skill-tag">Python</span>
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C/C++</span>
                 </div>
             </div>
             <div class="skill-category">
                 <h3>Android & UI</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Jetpack Compose</span><span class="skill-tag">Clean Architecture</span><span class="skill-tag">Room DB</span><span class="skill-tag">Hilt</span>
+                    <span class="skill-tag">Jetpack Compose</span>
+                    <span class="skill-tag">Clean Architecture</span>
+                    <span class="skill-tag">MVVM/MVI</span>
+                    <span class="skill-tag">Room DB</span>
+                    <span class="skill-tag">Hilt</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Cloud</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">CI/CD</span>
                 </div>
             </div>
         </div>
@@ -441,13 +584,13 @@
             <div class="timeline-item">
                 <div class="timeline-header">
                     <div>
-                        <div class="timeline-title">Technical Head</div>
+                        <div class="timeline-title">Technical Head - Android Development</div>
                         <div class="timeline-company">Nexgen Computing Society (NCS)</div>
                     </div>
                     <div class="timeline-date">Present</div>
                 </div>
                 <div class="timeline-content">
-                    <ul><li>Leading Android development initiatives and mentoring peers in best coding practices.</li></ul>
+                    <ul><li>Leading Android initiatives and mentoring peers in best coding practices.</li></ul>
                 </div>
             </div>
             <div class="timeline-item">
@@ -469,15 +612,23 @@
         <h2 class="section-title">Technical Projects</h2>
         <div class="project-grid">
 
-            <!-- Expense Tracker -->
-            <div class="project-card" style="border-color: var(--accent-green);">
+            <!-- Featured: Expense Tracker -->
+            <div class="project-card" style="border-color: var(--accent-green); box-shadow: 0 0 15px rgba(57, 211, 83, 0.1);">
                 <video class="project-img" controls preload="metadata"><source src="Expense tracker.mp4" type="video/mp4"></video>
                 <div class="project-content">
-                    <h3 class="project-title">Expense Tracker Mobile App</h3>
-                    <span class="skill-tag" style="font-size: 0.7rem; background: rgba(57, 211, 83, 0.2);">LIVE ON PLAY STORE</span>
-                    <p class="project-desc">A production-ready tool built with Clean Architecture for real-world spending tracking.</p>
-                    <div class="tech-stack"><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">Room DB</span></div>
-                    <a href="https://play.google.com/store/apps/details?id=com.nexappra.expensetrackerapp" target="_blank" class="project-link" style="color: var(--accent-green);">Play Store Link</a>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h3 class="project-title">Expense Tracker Mobile App</h3>
+                            <span class="skill-tag" style="font-size: 0.7rem; background: rgba(57, 211, 83, 0.2);">LIVE ON PLAY STORE</span>
+                        </div>
+                        <p class="project-desc">Production-ready financial tool built with Clean Architecture. Features real-time tracking, spending analytics, and CSV/PDF export with zero hardcoded data.</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Jetpack Compose</span><span class="tech-tag">MVVM</span><span class="tech-tag">Room DB</span>
+                    </div>
+                    <div class="project-links-container">
+                        <a href="https://play.google.com/store/apps/details?id=com.nexappra.expensetrackerapp" target="_blank" class="project-link" style="color: var(--accent-green);">Google Play Store</a>
+                    </div>
                 </div>
             </div>
 
@@ -488,9 +639,8 @@
                     <video controls><source src="Hunnarmand 1 (2).mp4" type="video/mp4"></video>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Hunnarmand</h3>
-                    <p class="project-desc">Service platform connecting users with local skilled professionals via geo-location.</p>
-                    <div class="tech-stack"><span class="tech-tag">Firebase</span><span class="tech-tag">Maps API</span></div>
+                    <div><h3 class="project-title">Hunnarmand</h3><p class="project-desc">Platform connecting users with local professionnels using geo-location and Firebase.</p></div>
+                    <div class="tech-stack"><span class="tech-tag">Kotlin</span><span class="tech-tag">Google Maps API</span></div>
                     <a href="https://github.com/Alyasa62/Hunrmand" target="_blank" class="project-link">View Repository</a>
                 </div>
             </div>
@@ -499,10 +649,9 @@
             <div class="project-card">
                 <video class="project-img" controls><source src="Hostel management.mp4" type="video/mp4"></video>
                 <div class="project-content">
-                    <h3 class="project-title">Advanced Hostel Management</h3>
-                    <p class="project-desc">Digitizing residential records, attendance, and mess management.</p>
+                    <div><h3 class="project-title">Hostel Management App</h3><p class="project-desc">Digitizing residential records, mess management, and room allocation.</p></div>
                     <div class="tech-stack"><span class="tech-tag">MVVM</span><span class="tech-tag">SQLite</span></div>
-                    <a href="https://github.com/adnandeveloper1/Advanced_Hostel_Management_App" target="_blank" class="project-link">View Repository</a>
+                    <a href="https://github.com/adnandeveloper1/Advanced_Hostel_Management_App" target="_blank" class="project-link">View Repo</a>
                 </div>
             </div>
 
@@ -510,12 +659,12 @@
             <div class="project-card">
                 <video class="project-img" controls><source src="tichcraft talor.mp4" type="video/mp4"></video>
                 <div class="project-content">
-                    <h3 class="project-title">StitchCraft Tailor</h3>
-                    <p class="project-desc">Offline-first Android application for managing local tailoring businesses.</p>
+                    <div><h3 class="project-title">StitchCraft Tailor</h3><p class="project-desc">Offline-first management system for local businesses.</p></div>
                     <div class="tech-stack"><span class="tech-tag">Kotlin</span><span class="tech-tag">Room DB</span></div>
-                    <a href="https://github.com/adnandeveloper1/Stitch-Craft-Tailor" target="_blank" class="project-link">View Repository</a>
+                    <a href="https://github.com/adnandeveloper1/Stitch-Craft-Tailor" target="_blank" class="project-link">View Repo</a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -524,7 +673,7 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-header">
-                    <div><div class="timeline-title">BS Software Engineering</div><div class="timeline-company">University of Mianwali</div></div>
+                    <div><div class="timeline-title">Bachelors of Software Engineering</div><div class="timeline-company">University of Mianwali</div></div>
                     <div class="timeline-date">Graduating May 2026</div>
                 </div>
                 <div class="timeline-content"><p style="color: var(--accent-green); font-weight: 600;">CGPA: 3.13 / 4.0</p></div>
@@ -533,16 +682,72 @@
     </section>
 
     <section id="certifications">
-        <h2 class="section-title">Certifications</h2>
+        <h2 class="section-title">Certifications & Achievements</h2>
         <div class="project-grid">
+
             <div class="project-card">
                 <img src="cert-codex.png" class="cert-img">
-                <div class="project-content"><h3 class="project-title">CODEX 3.0 - Prompt Engineering</h3><p class="project-subtitle">Namal University | 2026</p></div>
+                <div class="project-content">
+                    <h3 class="project-title">CODEX 3.0 - Prompt Engineering</h3>
+                    <p class="project-subtitle">Namal University | Apr 2026</p>
+                    <p class="project-desc">Participated in AI interaction and Prompt Engineering competition alongside students from 11 universities.</p>
+                </div>
             </div>
+
             <div class="project-card">
                 <img src="cert-kotlin.png" class="cert-img">
-                <div class="project-content"><h3 class="project-title">Advanced Programming in Kotlin</h3><p class="project-subtitle">Coursera (Meta)</p></div>
+                <div class="project-content">
+                    <h3 class="project-title">Advanced Programming in Kotlin</h3>
+                    <p class="project-subtitle">Coursera (Meta) | Jul 2025</p>
+                    <p class="project-desc">Successfully completed advanced Kotlin concepts via Meta's professional certification.</p>
+                </div>
             </div>
+
+            <div class="project-card">
+                <img src="cert-codealpha.png" class="cert-img">
+                <div class="project-content">
+                    <h3 class="project-title">Mobile App Internship</h3>
+                    <p class="project-subtitle">CodeAlpha | May 2025</p>
+                    <p class="project-desc">Developed user-friendly quiz and tracking apps using Room DB and Firebase.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="cert-agri.png" class="cert-img">
+                <div class="project-content">
+                    <h3 class="project-title">Agri Fusion 2025</h3>
+                    <p class="project-subtitle">Namal University | May 2025</p>
+                    <p class="project-desc">Presented a digitized approach to real-time data collection for smart agriculture.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="cert-codequest.png" class="cert-img">
+                <div class="project-content">
+                    <h3 class="project-title">2nd Position - CodeQuest</h3>
+                    <p class="project-subtitle">Nexgen Society | Jan 2025</p>
+                    <p class="project-desc">Secured runner-up position in high-pressure programming and logic contest.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="cert-speed.png" class="cert-img">
+                <div class="project-content">
+                    <h3 class="project-title">2nd Place - Speed Programming</h3>
+                    <p class="project-subtitle">Al-Khwarizmi Society | Jun 2024</p>
+                    <p class="project-desc">Solved complex logic problems under strict time constraints at Next Vaganza 2024.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="cert-ncs.png" class="cert-img">
+                <div class="project-content">
+                    <h3 class="project-title">Technical Head - NCS</h3>
+                    <p class="project-subtitle">Nexgen Computing Society | Present</p>
+                    <p class="project-desc">Leading Android development teams, mentoring members, and resolving technical app issues.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -554,11 +759,11 @@
                 <a href="https://wa.me/9230690500528" target="_blank">+92 306 90500528</a>
             </div>
         </div>
-        <div class="social-links" style="display:flex; justify-content:center; gap:20px; margin-top:20px;">
-            <a href="https://github.com/adnandeveloper1" target="_blank" style="color:var(--text-muted); text-decoration:none;">GitHub</a>
-            <a href="https://www.linkedin.com/in/muhammad-adnan-6b416a250/" target="_blank" style="color:var(--text-muted); text-decoration:none;">LinkedIn</a>
+        <div class="social-links">
+            <a href="https://github.com/adnandeveloper1" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/muhammad-adnan-6b416a250/" target="_blank">LinkedIn</a>
         </div>
-        <p class="copyright" style="margin-top:30px;">Designed & Built by Muhammad Adnan &copy; 2026</p>
+        <p class="copyright">Designed & Built by Muhammad Adnan &copy; 2026</p>
     </footer>
 
 </body>
