@@ -339,7 +339,7 @@
             background-color: #000;
         }
 
-        /* Media Scroller for Multiple Videos */
+        /* Media Scroller for Multiple Videos/Images */
         .media-scroller {
             display: flex;
             overflow-x: auto;
@@ -362,7 +362,7 @@
             border-radius: 10px;
         }
 
-        .media-scroller video {
+        .media-scroller video, .media-scroller img {
             flex: 0 0 100%;
             height: 200px;
             object-fit: cover;
@@ -581,6 +581,26 @@
     <section id="experience">
         <h2 class="section-title">Professional Experience</h2>
         <div class="timeline">
+            
+            <div class="timeline-item" style="border-left: 3px solid var(--accent-green);">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Guest Speaker – Android Development & AI Technologies</div>
+                        <div class="timeline-company">Govt Vocational Training Institute for Women, Mianwali</div>
+                    </div>
+                    <div class="timeline-date">2026</div>
+                </div>
+                <div class="timeline-content">
+                    <p style="color: var(--text-main); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem;">In collaboration with Department of Software Engineering, University of Mianwali</p>
+                    <ul>
+                        <li>Delivered an interactive, comprehensive technical session on Modern Android Development, integration of AI tools, and emerging technical paradigms.</li>
+                        <li>Guided students regarding career paths in Software Engineering, application publishing via Google Play Store, and strategies for modern industry-level tech innovation.</li>
+                        <li>Showcased "Hunnarmand" as a case study, demonstrating how engineering and technology intersect to resolve local unemployment issues by cleanly matching skilled blue-collar workers with opportunities.</li>
+                        <li>Fostered strong public presentation skills, corporate communication confidence, and structural mentorship within the academic community.</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="timeline-item">
                 <div class="timeline-header">
                     <div>
@@ -593,6 +613,7 @@
                     <ul><li>Leading Android initiatives and mentoring peers in best coding practices.</li></ul>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="timeline-header">
                     <div>
@@ -628,13 +649,20 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" style="border-color: var(--accent-green);">
                 <div class="media-scroller">
                     <video controls><source src="Hunnarmand.mp4" type="video/mp4"></video>
                     <video controls><source src="Hunnarmand 1 (2).mp4" type="video/mp4"></video>
                 </div>
                 <div class="project-content">
-                    <div><h3 class="project-title">Hunnarmand</h3><p class="project-desc">Platform connecting users with local skilled professionnels using geo-location and Firebase.</p></div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h3 class="project-title">Hunnarmand</h3>
+                            <span class="skill-tag" style="font-size: 0.65rem; background: rgba(57, 211, 83, 0.15); color: var(--accent-green);">RUNNER-UP | INNOVATION EXPO 2026</span>
+                        </div>
+                        <p class="project-subtitle" style="font-weight: 700; margin-bottom: 0.5rem;">Industrial Final Year Project (Namal University Expo)</p>
+                        <p class="project-desc">An industry-focused service deployment platform built to optimize local labor ecosystems by matching skilled workers with target users cleanly via geo-location analytics and Firebase messaging.</p>
+                    </div>
                     <a href="https://github.com/Alyasa62/Hunrmand" target="_blank" class="project-link">View Repository</a>
                 </div>
             </div>
@@ -681,6 +709,25 @@
     <section id="certifications">
         <h2 class="section-title">Certifications & Achievements</h2>
         <div class="project-grid">
+
+            <div class="project-card" style="border-color: var(--accent-green);">
+                <div class="media-scroller">
+                    <img src="guest-speaker-certificate.jfif" alt="Guest Speaker Certificate">
+                    <img src="guest-speaker-session-1.jpeg" alt="Guest Speaker Session Image 1">
+                    <img src="guest-speaker-session-2.jpeg" alt="Guest Speaker Session Image 2">
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3 class="project-title">Guest Speaker Keynote Presenter</h3>
+                        <p class="project-subtitle">Govt Vocational Institute | 2026</p>
+                        <p class="project-desc">Honored as an invited speaker on cutting-edge software paradigms and modern architecture solutions. Media contents showcase certificate delivery and ongoing interactive audience slides.</p>
+                    </div>
+                    <div class="scroll-hint">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        Swipe horizontally to view session photos
+                    </div>
+                </div>
+            </div>
 
             <div class="project-card">
                 <img src="cert-codex.png" class="cert-img">
